@@ -16,8 +16,9 @@ import { UploadComponent } from 'src/app/modules/upload/upload.component';
 import { UploadService } from 'src/app/modules/upload.service';
 import { SanctionComponent } from 'src/app/modules/sanction/sanction.component';
 import { MatIconModule } from '@angular/material/icon';
-import { BREAKPOINTS } from '@angular/flex-layout';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'; // Import the FormsModule
+
 
 
 @NgModule({
@@ -32,6 +33,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   ],
   imports: [
     CommonModule,
+    BrowserModule,
+    FormsModule,
     RouterModule,
     SharedModule,
     MatToolbarModule,

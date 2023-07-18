@@ -14,6 +14,9 @@ import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'; // Import the FormsModule
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -23,6 +26,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
   ],
   imports: [
     CommonModule,
+    BrowserModule,
+    FormsModule,
     MatDividerModule,
     MatToolbarModule,
     MatIconModule,

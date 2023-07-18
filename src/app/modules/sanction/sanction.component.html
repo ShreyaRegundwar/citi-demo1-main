@@ -35,6 +35,18 @@
 
   <body class="b">
     <div>
+     
+    <!--<option value="payeeName">Payee Name</option>
+        <option value="payerName">Payer Name</option>
+        <option value="transactionId">Transaction ID</option>-->    
+        <select id="filterType" class="filter-input" [(ngModel)]="selectedFilter">
+          <option value="PASS">PASS</option>
+          <option value="FAIL">FAIL</option>
+        </select>
+        <button id="filterButton" class="filter-button" (click)="applyFilters()">Apply Filters</button>
+      
+        <br /><br />
+
       <table>
         <thead>
           <tr>

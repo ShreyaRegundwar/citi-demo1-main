@@ -30,11 +30,20 @@ import { UploadService } from '../upload.service';
 })
 export class SanctionComponent {
   excelData: any[];
+  filteredData: any[];
+  selectedFilter: string = '';
 
   constructor(private uploadService: UploadService) {
-    // Retrieve the ExcelData from the shared service
     this.excelData = this.uploadService.getExcelData();
+    this.filteredData = this.excelData;
   }
 
-  // Rest of the code...
+  applyFilters() {
+    if (this.selectedFilter === '') {
+      this.filteredData = this.excelData; // No filter selected, show all the table data
+    } else {
+      this.filteredData = this.excelData.filter(data => data.Status === this.selectedFilter);
+    }
+  }
 }
+
