@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="sanction.component.scss">
+    <style>
+      table {
+        width: 70%;
+        margin-left: 10%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+
+      }
+      th {
+        background-color:rgb(206, 200, 200);
+        padding-left: 8px;
+        font-weight: bold;
+      }
+      tr.PASS {
+        background-color: #39ff14;
+      }
+      tr.FAIL {
+        background-color: red;
+      }
+   /*   tr:hover {
+        background-color: lightblue;
+      }*/
+    </style>
+  </head>
+
+  <body class="b">
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Date</th>
+            <th>Payer Name</th>
+            <th>Payer Account</th>
+            <th>Payee Name</th>
+            <th>Payee Account</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of excelData" [ngClass]="{ 'PASS': data.Status === 'PASS', 'FAIL': data.Status === 'FAIL' }">
+    
+            <td>{{ data.TransactionID }}</td>
+            <td>{{ data.Date }}</td>
+            <td>{{ data.PayerName }}</td>
+            <td>{{ data.PayerAccount }}</td>
+            <td>{{ data.PayeeName }}</td>
+            <td>{{ data.PayeeAccount }}</td>
+            <td>{{ data.Amount }}</td>
+            <td>{{ data.Status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
