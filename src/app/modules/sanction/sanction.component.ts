@@ -31,18 +31,20 @@ import { UploadService } from '../upload.service';
 export class SanctionComponent {
   excelData: any[];
   filteredData: any[];
-  selectedFilter: string = '';
+  //selectedFilter: string = '';
+  selectedStatusFilter: string = ''; // Add this line to declare the property
+  transactionIdFilter: string = ''
 
   constructor(private uploadService: UploadService) {
     this.excelData = this.uploadService.getExcelData();
     this.filteredData = this.excelData;
   }
 
-  applyFilters() {
-    if (this.selectedFilter === '') {
-      this.filteredData = this.excelData; // No filter selected, show all the table data
+  applyTransactionIdFilter() {
+    if (this.transactionIdFilter) {
+      this.filteredData = this.excelData.filter(data => data.TransactionID.includes(this.transactionIdFilter));
     } else {
-      this.filteredData = this.excelData.filter(data => data.Status === this.selectedFilter);
+      this.filteredData = this.excelData;
     }
   }
 }

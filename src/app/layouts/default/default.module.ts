@@ -18,15 +18,17 @@ import { SanctionComponent } from 'src/app/modules/sanction/sanction.component';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // Import the FormsModule
-
-
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SearchPipe } from 'src/app/search.pipe';
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
     UploadComponent,
     SanctionComponent,
+    SearchPipe
+   
 
 
     
@@ -45,7 +47,9 @@ import { FormsModule } from '@angular/forms'; // Import the FormsModule
     MatPaginatorModule,
     MatTableModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    Ng2SearchPipeModule
   ],providers: [
     UploadService
   ]
